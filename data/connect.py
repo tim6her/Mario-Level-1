@@ -79,10 +79,13 @@ ACTION = Button(BREAK, ACT_QUEUE)
 def _main():
     while True:
         move = MOVE.request()
+        print('Stear', move)
         MOVE_QUEUE.put(move)
         jump = JUMP.request()
+        print('Jump', jump)
         JUMP_QUEUE.put(jump)
         action = ACTION.request()
+        print('Acc', action)
         ACT_QUEUE.put(action)
         time.sleep(0.01)
 
