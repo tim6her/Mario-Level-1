@@ -1,4 +1,4 @@
-/*
+﻿/*
 	App by FreeHTML5.co
 	Twitter: http://twitter.com/fh5co
 	URL: http://freehtml5.co
@@ -123,10 +123,10 @@ html {
   margin-left: 10px;
 }
 .fh5co-hero-inner .fh5co-hero-smartphone {
-  position: absolute;
-  right: 0px;
-  top: 120px;
-  height: 650px;
+	position: absolute;
+	right: 20px;
+	top: 200px;
+	height: 400px;
 }
 
 /* ==========================================================================================================
