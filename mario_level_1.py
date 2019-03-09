@@ -11,8 +11,10 @@ import pygame as pg
 from data.main import main
 import cProfile
 
+from data.connect import THREAD
 
 if __name__=='__main__':
+    THREAD.start()
     main()
     pg.quit()
     sys.exit()
