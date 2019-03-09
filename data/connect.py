@@ -52,12 +52,12 @@ class Direction(Button):
 
 
 MOVE = Direction(STEARING)
-ACTION = Button(ACCELERATOR)
-JUMP = Button(BREAK)
+JUMP = Button(ACCELERATOR)
+ACTION = Button(BREAK)
 
 if __name__ == '__main__':
     for i in range(50):
         print(ACCELERATOR, bool(JUMP))
         print(STEARING, MOVE.value)
         print(STEARING, MOVE.move)
-        time.sleep(0.1)
+        time.sleep(0.01)
