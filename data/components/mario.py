@@ -4,6 +4,7 @@ import pygame as pg
 from .. import setup, tools
 from .. import constants as c
 from . import powerups
+from .. connect import ACTION, JUMP, MOVE
 
 
 class Mario(pg.sprite.Sprite):
@@ -432,31 +433,38 @@ class Mario(pg.sprite.Sprite):
             self.falling_at_end_of_level()
 
 
+            # ███    ███  █████  ██████  ██  ██████
+            # ████  ████ ██   ██ ██   ██ ██ ██    ██
+            # ██ ████ ██ ███████ ██████  ██ ██    ██
+            # ██  ██  ██ ██   ██ ██   ██ ██ ██    ██
+            # ██      ██ ██   ██ ██   ██ ██  ██████
+
+
     def standing(self, keys, fire_group):
         """This function is called if Mario is standing still"""
         self.check_to_allow_jump(keys)
         self.check_to_allow_fireball(keys)
-        
+
         self.frame_index = 0
         self.x_vel = 0
         self.y_vel = 0
 
-        if keys[tools.keybinding['action']]:
+        if keys[tools.keybinding['action']] or ACTION:
             if self.fire and self.allow_fireball:
                 self.shoot_fireball(fire_group)
 
         if keys[tools.keybinding['down']]:
             self.crouching = True
 
-        if keys[tools.keybinding['left']]:
+        if keys[tools.keybinding['left']] or MOVE.left:
             self.facing_right = False
             self.get_out_of_crouch()
             self.state = c.WALK
-        elif keys[tools.keybinding['right']]:
+        elif keys[tools.keybinding['right']] or MOVE.right:
             self.facing_right = True
             self.get_out_of_crouch()
             self.state = c.WALK
-        elif keys[tools.keybinding['jump']]:
+        elif keys[tools.keybinding['jump']] or JUMP:
             if self.allow_jump:
                 if self.big:
                     setup.SFX['big_jump'].play()
@@ -570,7 +578,7 @@ class Mario(pg.sprite.Sprite):
                     self.y_vel = c.JUMP_VEL
 
 
-        if keys[tools.keybinding['left']]:
+        if keys[tools.keybinding['left']] or MOVE.left:
             self.get_out_of_crouch()
             self.facing_right = False
             if self.x_vel > 0:
@@ -586,7 +594,7 @@ class Mario(pg.sprite.Sprite):
             elif self.x_vel < (self.max_x_vel * -1):
                 self.x_vel += self.x_accel
 
-        elif keys[tools.keybinding['right']]:
+        elif keys[tools.keybinding['right']] or MOVE.right:
             self.get_out_of_crouch()
             self.facing_right = True
             if self.x_vel < 0:
@@ -1129,14 +1137,3 @@ class Mario(pg.sprite.Sprite):
             self.image = self.right_frames[self.frame_index]
         else:
             self.image = self.left_frames[self.frame_index]
-
-
-
-
-
-
-
-
-
-
-
