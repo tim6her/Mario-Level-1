@@ -7,7 +7,7 @@ IP_CAR = 'http://192.168.8.10'
 IP_SIMULATOR = 'http://130.82.239.210'
 
 ACCELERATOR = 'MO_Fahrpedalrohwert_01'
-BREAK = 'ESP_Fahrer_bremst'
+BREAK = 'ESP_Bremsdruck'
 STEARING = 'LWI_Lenkradwinkel'
 RPM = 'MO_Drehzahl_01'
 
@@ -34,21 +34,23 @@ class Direction(Button):
         super(Direction, self).__init__(key)
         self._last_value = None
         self._delta = None
-        self._move = None
+        self._left = None
+        self._right = None
 
     @property
     def delta(self):
         if self._last_value is None:
             self._last_value = self.value
             return 0
-        delta = self._last_value - self.value
-        self._last_value -= delta
-        return delta
+        return self._last_value - self.value
 
     @property
-    def move(self):
-        sign = lambda x: x and (1, -1)[x < 0]
-        return sign(self.delta)
+    def left(self):
+        return self.delta < 0
+
+    @property
+    def right(self):
+        return self.delta > 0
 
 
 MOVE = Direction(STEARING)
@@ -59,5 +61,5 @@ if __name__ == '__main__':
     for i in range(50):
         print(ACCELERATOR, bool(JUMP))
         print(STEARING, MOVE.value)
-        print(STEARING, MOVE.move)
+        print(STEARING, MOVE.left)
         time.sleep(0.01)
