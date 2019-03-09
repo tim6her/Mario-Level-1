@@ -1,33 +1,20 @@
-Super Mario Bros Level 1
-=============
+Super Mario GTI
+===============
 
-An attempt to recreate the first level of Super Mario Bros.
+An attempt to bring the awesomeness back to driving.
 
-![screenshot](https://raw.github.com/justinmeister/Mario-Level-1/master/screenshot.png)
+![screenshot](https://user-images.githubusercontent.com/11040405/54078585-b5a7a280-42ca-11e9-8fd8-46e7849f9cd1.gif)
 
-CONTROLS: 
+CONTROLS:
+---------
 
-Arrow keys for direction
+- Steringwheel for directions
+- Accelerator for jump
+- Break for action (fireball, run)
 
-'a' for jump
-
-'s' for action (fireball, run)
-
-
-DEPENDENCIES:
-
-Pygame 1.9.1 (Python 2)
-
-Pygame 1.9.2 (Python 3) - a little trickier to get going.
-
-To install dependencies for Python 2.x:
-
-	pip install -r requirements.txt
-
-VIDEO DEMO:
-
-http://www.youtube.com/watch?v=HBbzYKMfx5Y
-   
 DISCLAIMER:
+-----------
 
-This project is intended for non-commercial educational purposes.
+This project is intended for non-commercial recreational purposes only.
+
+Based on [Super Mario Bros Level 1](https://github.com/justinmeister/Mario-Level-1) by [justinmeister](https://github.com/justinmeister) and an API provided by [Bosch IoT LAB](http://www.iot-lab.ch).
