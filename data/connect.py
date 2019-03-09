@@ -27,7 +27,7 @@ class Button(object):
         return response.json()['measurement']['value']
 
     def __bool__(self):
-        return bool(self.value)
+        return self.value > 0
 
 class Direction(Button):
     def __init__(self, key):
@@ -58,8 +58,13 @@ JUMP = Button(ACCELERATOR)
 ACTION = Button(BREAK)
 
 if __name__ == '__main__':
+    import pandas as pd
+
+    data = []
     for i in range(50):
-        print(ACCELERATOR, bool(JUMP))
-        print(STEARING, MOVE.value)
-        print(STEARING, MOVE.left)
+        data.append((JUMP.value, bool(JUMP),
+                     ACTION.value, bool(ACTION),
+                     MOVE.value, MOVE.left, MOVE.right))
         time.sleep(0.01)
+    df = pd.DataFrame(data)
+    df.to_excel('data.xlsx')

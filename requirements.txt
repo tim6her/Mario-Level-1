@@ -1,1 +1,3 @@
-pygame==1.9.1release
+pygame
+paho-mqtt
+requests
