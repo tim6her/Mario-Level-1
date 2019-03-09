@@ -3,7 +3,7 @@ Super Mario GTI
 
 An attempt to bring the awesomeness back to driving.
 
-![screenshot](resources/graphics/screen.gif)
+![screenshot](https://user-images.githubusercontent.com/11040405/54078585-b5a7a280-42ca-11e9-8fd8-46e7849f9cd1.gif)
 
 CONTROLS:
 ---------
