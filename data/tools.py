@@ -20,7 +20,7 @@ class Control(object):
         self.done = False
         self.clock = pg.time.Clock()
         self.caption = caption
-        self.fps = 60
+        self.fps = 20
         self.show_fps = False
         self.current_time = 0.0
         self.keys = pg.key.get_pressed()
@@ -142,14 +142,3 @@ def load_all_sfx(directory, accept=('.wav','.mpe','.ogg','.mdi')):
         if ext.lower() in accept:
             effects[name] = pg.mixer.Sound(os.path.join(directory, fx))
     return effects
-
-
-
-
-
-
-
-
-
-
-

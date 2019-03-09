@@ -12,7 +12,7 @@ BREAK = 'ESP_Bremsdruck'
 STEARING = 'LWI_Lenkradwinkel'
 STEARING_SGN = 'LWI_VZ_Lenkradwinkel'
 
-SIMULATE = False
+SIMULATE = True
 PORT_CAR = 1883
 PORT_SIMULATOR = 1884
 
@@ -41,16 +41,16 @@ def on_message(client, userdata, msg):
     print(json.loads(msg.payload)['value'])
     value = json.loads(msg.payload)['value']
     if msg.topic == '/signal/' + ACCELERATOR:
-        ACC_QUEUE.put(value)
+        #ACC_QUEUE.put(value)
         print('ACC', ACC_QUEUE.qsize())
     if msg.topic == '/signal/' + BREAK:
-        BRK_QUEUE.put(value)
+        #BRK_QUEUE.put(value)
         print('BREAK', BRK_QUEUE.qsize())
     if msg.topic == '/signal/' + STEARING:
-        STEAR_QUEUE.put(value)
+        #STEAR_QUEUE.put(value)
         print('STEAR', STEAR_QUEUE.qsize())
     if msg.topic == '/signal/' + STEARING_SGN:
-        SGN_QUEUE.put(value)
+        #SGN_QUEUE.put(value)
         print('SGN', SGN_QUEUE.qsize())
 
 def run_mqtt():
@@ -65,7 +65,7 @@ def run_mqtt():
     # reconnecting. Check the documentation at
     # https://github.com/eclipse/paho.mqtt.python
     # for information on how to use other loop*() functions
-    client.loop_start()
+    client.loop_forever()
 
 if __name__ == '__main__':
     run_mqtt()
