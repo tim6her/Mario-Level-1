@@ -12,6 +12,12 @@ CONTROLS:
 - Accelerator for jump
 - Break for action (fireball, run)
 
+LINKS:
+------
+
+- [Video Demo](https://www.youtube.com/watch?v=dRYWBtBHoKo)
+- [Website](https://tim6her.github.io/Super-Mario-GTI/)
+
 DISCLAIMER:
 -----------
 
