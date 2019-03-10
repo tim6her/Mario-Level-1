@@ -15,7 +15,8 @@ CONTROLS:
 LINKS:
 ------
 
-- [Video Demo](https://www.youtube.com/watch?v=dRYWBtBHoKo)
+- [Promo Video](https://www.youtube.com/watch?v=dRYWBtBHoKo)
+- [Gameplay Impressions](https://www.youtube.com/watch?v=fw7BTN9fVxk)
 - [Website](https://tim6her.github.io/Super-Mario-GTI/)
 
 DISCLAIMER:
